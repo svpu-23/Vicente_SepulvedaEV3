@@ -15,6 +15,10 @@ export default function Newsletter() {
       setValidated(true);
     } else {
       setValidated(false);
+      
+      // ✨ Guardamos el correo en el navegador antes de limpiar el input
+      localStorage.setItem('correoSuscrito', email);
+      
       setSuccess(true);
       setEmail(''); 
     }

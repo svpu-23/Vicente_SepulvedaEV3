@@ -8,6 +8,13 @@ export default function Hero({ onOpenModal }) {
     precio: "$4.990"
   };
 
+  const scrollToMenu = () => {
+    const menuSection = document.getElementById('menu');
+    if (menuSection) {
+      menuSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div 
       id="hero"
@@ -31,7 +38,7 @@ export default function Hero({ onOpenModal }) {
               <Button variant="warning" size="lg" className="fw-bold px-4 text-dark" onClick={() => onOpenModal(productoDestacado)}>
                 Ver Especial del Día 🌟
               </Button>
-              <Button variant="outline-light" size="lg" className="px-4" href="#menu">
+              <Button variant="outline-light" size="lg" className="px-4" onClick={scrollToMenu}>
                 Explorar la Carta
               </Button>
             </div>
